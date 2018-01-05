@@ -41,6 +41,18 @@
        entry_five = book.entries[4]
        check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
      end
+     
+     it "imports the 6th entry" do
+       book.import_from_csv("entries_2.csv")
+       entry_six = book.entries[0]
+       check_entry(entry_six, "Kaya", "555-555-1111", "kaya@blocmail.com")
+     end
+     
+     it "imports the 7th entry" do
+       book.import_from_csv("entries_2.csv")
+       entry_seven = book.entries[1]
+       check_entry(entry_seven, "Milo", "555-555-2222", "milo@blocmail.com")
+     end
  
      it "initializes entries as an array" do
        expect(book.entries).to be_an(Array)
