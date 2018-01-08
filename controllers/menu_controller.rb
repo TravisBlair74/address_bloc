@@ -14,7 +14,8 @@
      puts "3 - Create an entry"
      puts "4 - Search for an entry"
      puts "5 - Import entries from a CSV"
-     puts "6 - Exit"
+     puts "6 - DELETE ALL ENTRIES"
+     puts "7 - Exit"
      print "Enter your selection: "
  
      selection = gets.to_i
@@ -41,6 +42,11 @@
          read_csv
          main_menu
        when 6
+         system "clear"
+         @address_book.armageddon
+         puts "All entries annihilated"
+         main_menu
+       when 7
          puts "Good-bye!"
          exit(0)
        else
@@ -75,7 +81,7 @@
       view_entry_n
      end
    end
- 
+   
    def create_entry
      system "clear"
      puts "New AddressBloc Entry"
